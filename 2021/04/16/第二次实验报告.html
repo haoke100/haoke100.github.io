@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>第二次实验报告</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <nav>
+    
+      <a href="/" >主页</a>
+    
+      <a href="/about.html" >关于</a>
+    
+      <a href="/blog.html" >博客</a>
+    
+      <a href="/staff.html" >作者</a>
+    
+  </nav>
+    <h1>第二次实验报告</h1>
+
+<p>
+  16 Apr 2021
+  
+  
+    - <a href="/authors/%E6%9D%8E%E6%B5%A9.html">浩子</a>
+  
+</p>
+
+<h1 id="web应用软件开发实训--第二次作业--开发一个静态网站">web应用软件开发实训 -第二次作业 -开发一个静态网站</h1>
+<p>公网地址 https://www.haoke100.xyz</p>
+
+<p>github仓库地址 https://github.com/haoke100/haoke100.github.io</p>
+<h2 id="一网站目录结构">一.网站目录结构</h2>
+<p><img src="/assets/images/tree.png" width="80%" /></p>
+<h2 id="二网站截图">二.网站截图</h2>
+<ul>
+  <li>首页</li>
+</ul>
+
+<p><img src="/assets/images/主页.png" width="80%" /></p>
+
+<ul>
+  <li>blog列表页</li>
+</ul>
+
+<p><img src="/assets/images/博客.png" width="80%" /></p>
+
+<ul>
+  <li>两篇post</li>
+</ul>
+
+<p><img src="/assets/images/帖子.png" width="80%" /></p>
+
+<p><img src="/assets/images/马说.png" width="80%" /></p>
+
+<ul>
+  <li>作者简介页面</li>
+</ul>
+
+<p><img src="/assets/images/作者.png" width="80%" /></p>
+<ul>
+  <li>about页面</li>
+</ul>
+
+<p><img src="/assets/images/关于.png" width="80%" /></p>
+
+<h2 id="三实验过程">三.实验过程</h2>
+<blockquote>
+  <ol>
+    <li>在wsl上安装Jekyll</li>
+    <li>安装vscode以及remote，并通过remote插件链接wsl</li>
+    <li>通过Jekyll build 编译网站并将_site目录部署到服务器中</li>
+    <li>将代码push 到gihub 打开网页正常运行</li>
+  </ol>
+</blockquote>
+
+<h2 id="四总结">四.总结</h2>
+<blockquote>
+  <ol>
+    <li>在实验过程中，遇到nginx服务启动一直失败的问题，解决方法是切换到root模式。</li>
+    <li>push代码到GitHub过程中一直报错，查阅资料得知，是因为在github上创建仓库的时候，顺便也创建了README文件，然而本地仓库又没有这个文件，所以导致版本冲突。
+有以下几种解决方法：<br />
+(1)、强制push到远程仓库：<br />
+git push -u origin master -f<br />
+(2)、push前先将远程仓库pull下来，再进行push：<br />
+git pull origin master
+git push -u origin msater<br />
+(3)、创建新的分支：<br />
+git branch [name]<br />
+git push -u origin [name]</li>
+    <li>实验心得体会:<br />
+通过本次实验，我学会了Jekyll网站开发的基本应用，如何配置服务器并解析域名，熟悉了markdown的基本语法和git命令行的基本操作。</li>
+  </ol>
+</blockquote>
+
+  </body>
+</html>
