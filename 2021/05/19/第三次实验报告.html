@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>第三次实验报告</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <nav>
+    
+      <a href="/" >主页</a>
+    
+      <a href="/about.html" >关于</a>
+    
+      <a href="/blog.html" >博客</a>
+    
+      <a href="/staff.html" >作者</a>
+    
+  </nav>
+    <h1>第三次实验报告</h1>
+
+<p>
+  19 May 2021
+  
+  
+    - <a href="/authors/%E6%9D%8E%E6%B5%A9.html">浩子</a>
+  
+</p>
+
+<h1 id="web应用软件开发实训--第3次作业--git使用">web应用软件开发实训 -第3次作业 -git使用</h1>
+
+<p>learngit项目网址为：<a href="https://github.com/haoke100/learngit">https://github.com/haoke100/learngit</a></p>
+
+<h2 id="一必做部分">一.必做部分</h2>
+<h3 id="1安装git">1.安装git</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5Xy01.png" width="80%" /></p>
+
+<h3 id="2创建版本库">2.创建版本库</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5XDX9.png" width="80%" /></p>
+
+<h3 id="3版本控制">3.版本控制</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5XB6J.png" width="80%" /></p>
+
+<h3 id="4版本回退">4.版本回退</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5XsmR.png" width="80%" /></p>
+
+<h3 id="5工作区和暂存区">5.工作区和暂存区</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5X6Tx.png" width="80%" /></p>
+
+<h3 id="6管理修改">6.管理修改</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5Xgk6.png" width="80%" /></p>
+
+<h3 id="7撤销修改">7.撤销修改</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5X2tK.png" width="80%" /></p>
+
+<h3 id="8删除文件">8.删除文件</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5X5Xd.png" width="80%" /></p>
+
+<h3 id="9远程仓库">9.远程仓库</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5XfpD.png" width="80%" /></p>
+
+<h3 id="10添加到远程仓库">10.添加到远程仓库</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5Xh1e.png" width="80%" /></p>
+
+<h3 id="11从远程仓库克隆">11.从远程仓库克隆</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5xZwR.png" width="80%" /></p>
+
+<h2 id="二选做部分">二.选做部分</h2>
+<h3 id="1分支管理相关">1.分支管理相关</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5XRfO.png" width="80%" /></p>
+
+<h3 id="2标签管理相关">2.标签管理相关</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5X46H.png" width="80%" /></p>
+
+<h3 id="3使用gitee">3.使用gitee</h3>
+<p><img src="https://z3.ax1x.com/2021/05/19/g5XonA.png" width="80%" /></p>
+
+<h2 id="三实验过程">三.实验过程</h2>
+<blockquote>
+  <ol>
+    <li>在子系统中安装git</li>
+    <li>按照讲义依次操作，熟悉git</li>
+    <li>使用图床编写markdown，使其更加高效</li>
+    <li>利用git将文件push 到gihub中 打开网页正常运行</li>
+  </ol>
+</blockquote>
+
+<h2 id="四总结">四.总结</h2>
+<blockquote>
+  <ol>
+    <li>使用ssh时遇到问题，git上传代码报错ssh: connect to host github.com port 22: Connection timed out。
+解决办法：打开存放ssh的目录→→则新建config文件输入下面内容
+Host github.com
+User GitHub的账号名称
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443</li>
+    <li>push代码到GitHub过程中一直报错，查阅资料得知，是因为在github上创建仓库的时候，顺便也创建了README文件，然而本地仓库又没有这个文件，所以导致版本冲突。
+有以下几种解决方法：<br />
+(1)、强制push到远程仓库：<br />
+git push -u origin master -f<br />
+(2)、push前先将远程仓库pull下来，再进行push：<br />
+git pull origin master
+git push -u origin msater<br />
+(3)、创建新的分支：<br />
+git branch [name]<br />
+git push -u origin [name]</li>
+    <li>git push到GitHub的时候遇到! [rejected] master -&gt; master (non-fast-forward)的问题<br />
+在网上搜了好久，输入了各种无效和错误的命令后，终于找到了解决办法：<br />
+  （1）、git pull origin master –allow-unrelated-histories //把远程仓库和本地同步，消除差异<br />
+  （2）、重新add和commit相应文件<br />
+  （3）、git push origin master</li>
+    <li>实验体会：通过本次实验掌握了git的基础使用方法，并且初步摆脱人肉百度，学会自己利用搜索引擎解决问题。</li>
+  </ol>
+</blockquote>
+
+
+  </body>
+</html>
